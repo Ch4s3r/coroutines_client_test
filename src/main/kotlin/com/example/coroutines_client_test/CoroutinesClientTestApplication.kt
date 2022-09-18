@@ -51,7 +51,7 @@ class Runner(val webClient: WebClient) : ApplicationRunner {
                     (1..100).map {
                         launch(dispatcher) {
                             val response = webClient.get()
-                                .uri("http://localhost:8000/hello")
+                                .uri("http://localhost:8080/hello")
                                 .retrieve()
                                 .awaitBody<String>()
                             println("${counter.incrementAndGet()}: $response")
